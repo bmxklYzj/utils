@@ -1,0 +1,34 @@
+{
+  "name": "myutils",
+  "version": "0.0.1",
+  "description": "utils",
+  "main": "dist/utils.min.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js --color --progress",
+    "build": "npm run test && webpack --config ./webpack/webpack.config.prod.js --color --progress",
+    "lint": "tsc",
+    "test": "npm run lint && jest --coverage",
+    "testWatch": "npm run lint && jest --watchAll --coverage"
+  },
+  "author": "yangzongjun",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "typescript": "^4.1.2",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
+  }
+}
