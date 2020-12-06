@@ -13,6 +13,8 @@ const config = {
   output: {
     path: path.join(__dirname, '../dist'),
     filename: 'utils.min.js',
+    library: 'myutils',
+    libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.ts', 'js', 'tsx', 'jsx'],
