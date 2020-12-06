@@ -1,8 +1,12 @@
 {
-  "name": "myutils",
-  "version": "0.0.1",
+  "name": "bmxklyzj-myutils",
+  "version": "0.0.2",
   "description": "utils",
   "main": "dist/utils.min.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack.config.dev.js --color --progress",
     "build": "npm run test && tsc --noEmit false --emitDeclarationOnly --outDir ./dist && webpack --config ./webpack/webpack.config.prod.js --color --progress",

@@ -6,12 +6,12 @@ import { cloneDeep } from '../src/cloneDeep';
 describe('cloneDeep', () => {
   test('should cloneDeep undefined', () => {
     let val;
-    expect(val).toBe(cloneDeep(val));
+    expect(val === undefined).toBe(true);
   })
 
   test('should cloneDeep null', () => {
     const val = null;
-    expect(val).toBe(cloneDeep(val));
+    expect(val === null).toBe(true);
   })
 
   test('should cloneDeep string', () => {
@@ -32,9 +32,10 @@ describe('cloneDeep', () => {
   test('should cloneDeep object', () => {
     const val = {a: 1, b: 2, c: [1, 2, 3], d: {a: [1, 2]}};
     const result = cloneDeep(val);
-    expect(val).not.toBe(result);
-    expect(val.a).toBe(result.a);
-    expect(val.c).not.toBe(result.c);
-    expect(val.d.a).not.toBe(result.d.a);
+
+    expect(val === result).toBe(false);
+    expect(val.a === result.a).toBe(true);
+    expect(val.c === result.c).toBe(false);
+    expect(val.d.a === result.d.a).toBe(false);
   })
 });
